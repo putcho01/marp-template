@@ -21,3 +21,6 @@ pnpm run dev
 
 1. `/style/scss/*.scss` ファイルを修正
 2. `pnpm run css`
+
+
+![スクリーンショット 2024-10-12 2 53 43](https://github.com/user-attachments/assets/d5fa1cbf-482e-48dd-9ce3-0970e1007e9d)
