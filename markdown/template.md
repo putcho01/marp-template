@@ -1,7 +1,7 @@
 ---
 title: "title"
 marp: true
-theme: "base"
+theme: "base" # base, green, gradient, dracula
 header: "TITLE DATE" # ヘッダーの文字
 footer: "" # フッターの文字、注意事項など貼り付けても良いですね
 backgroundColor: white # 背景色
