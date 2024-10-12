@@ -10,9 +10,9 @@ pnpm i
 # 新しい markdown ファイルを作成
 pnpm run new
 # markdown を PPTX 形式で export
-pnpm run pptx output/{ファイル名}/index.md
+pnpm run pptx output/{ファイル名}
 # markdown を pdf 形式で export
-pnpm run pptx output/{ファイル名}/index.md
+pnpm run pptx output/{ファイル名}
 # ローカルで起動
 pnpm run dev
 ```

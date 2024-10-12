@@ -5,4 +5,4 @@ input_file="./markdown/template.md"
 
 read -p "Enter slide name : " slide
 mkdir -p ./output/$slide
-cp -n $input_file "./output/$slide/index.md"
+cp -n $input_file "./output/$slide/$slide.md"

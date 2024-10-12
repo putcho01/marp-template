@@ -24,9 +24,18 @@ done
 
 shift $((OPTIND-1))
 
+dir_name="$1"
+file_name="$(basename "$dir_name")"
+file_path="$dir_name/$file_name.md"
+
+# Check if the file exists
+if [[ ! -f "$file_path" ]]; then
+  echo "Error: $file_path not found."
+  exit 1
+fi
+
 # titleを抽出
-dir_name=$(dirname "$1")
-title=$(basename "$dir_name")
+title=$(basename "$file_name")
 echo "✨  Extracted Title: $title"
 
 # titleに全角文字が含まれているかチェック
@@ -45,10 +54,10 @@ while IFS= read -r line; do
     echo "✨  Extracted Theme: $theme"
     break
   fi
-done < "$1"
+done < "$file_path"
 
 if [ "$html_option_set" = true ]; then
-  npx marp "$1" -o "output/$title/$title.pdf" --allow-local-files --html --theme "style/css/$theme.css"
+  npx marp "$1" -o "output/$file_name/$title.pdf" --allow-local-files --html --theme "style/css/$theme.css"
 else
-  npx marp "$1" -o "output/$title/$title.pdf" --allow-local-files --theme "style/css/$theme.css"
+  npx marp "$1" -o "output/$file_name/$title.pdf" --allow-local-files --theme "style/css/$theme.css"
 fi

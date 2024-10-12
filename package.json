@@ -3,7 +3,7 @@
 		"new": "bash ./bin/new.bash",
 		"pdf": "bash ./bin/pdf.bash",
 		"pptx": "bash ./bin/pptx.bash",
-		"dev": "marp -s ./markdown --theme-set ./style/css/*.css",
+		"dev": "marp -s ./output --theme-set ./style/css/*.css",
 		"css": "npm run scss && npm run postcss && npm run activate-theme",
 		"scss": "sass style/scss/:style/css/ --no-source-map",
 		"postcss": "postcss style/css/ -r --no-map",
