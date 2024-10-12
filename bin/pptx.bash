@@ -24,8 +24,8 @@ done
 shift $((OPTIND-1))
 
 # titleを抽出
-file_name="${1##*/}"
-title="${file_name%.*}"
+dir_name=$(dirname "$1")
+title=$(basename "$dir_name")
 echo "✨  Extracted Title: $title"
 
 # titleに全角文字が含まれているかチェック
@@ -47,7 +47,7 @@ while IFS= read -r line; do
 done < "$1"
 
 if [ "$html_option_set" = true ]; then
-  npx marp "$1" -o "output/$title.pptx" --allow-local-files --html --theme "style/css/$theme.css"
+  npx marp "$1" -o "output/$title/$title.pptx" --allow-local-files --html --theme "style/css/$theme.css"
 else
-  npx marp "$1" -o "output/$title.pptx" --allow-local-files --theme "style/css/$theme.css"
+  npx marp "$1" -o "output/$title/$title.pptx" --allow-local-files --theme "style/css/$theme.css"
 fi
